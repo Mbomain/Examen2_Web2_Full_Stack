@@ -8,6 +8,7 @@ const john = new Personne("John Doe");
 const macBookPro = new Possession(john, "MacBook Pro", 4000000, new Date("2023-12-25"), null, 5);
 const salaire = new Flux(john,"Alternance",500_000,new Date("2023-1-1"),null,null,1);
 const traindevie = new Flux(john,"Survie",-300_000,new Date("2023-1-1"),null,null,2)
+const voiture = new Possession(john, "Voiture", 400000000, new Date("2023-12-25"), null, 10);
 const possessions = [macBookPro,salaire,traindevie];
 
 
@@ -16,6 +17,7 @@ const johnPatrimoine  = new Patrimoine(john,possessions);
 johnPatrimoine.addPossession(macBookPro);
 johnPatrimoine.addPossession(salaire);
 johnPatrimoine.addPossession(traindevie);
+johnPatrimoine.addPossession(voiture);
 
 function save(personne, patrimoine) {
   const file = []
