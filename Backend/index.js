@@ -6,9 +6,8 @@ import possessionRoutes from './Routes/possessionRoute.js';
 
 const app = express();
 
-// Configuration de CORS
 const corsOptions = {
-  origin: ['http://localhost:3000', 'http://192.168.88.242:5000', 'https://front-g2tc.onrender.com'],
+  origin: ['http://localhost:5000', 'http://192.168.88.242:5000', 'https://front-g2tc.onrender.com'],
   methods: 'GET,POST,PUT,DELETE',
   allowedHeaders: 'Content-Type',
 };
