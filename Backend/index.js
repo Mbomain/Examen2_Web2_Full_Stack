@@ -6,8 +6,9 @@ import possessionRoutes from './Routes/possessionRoute.js';
 
 const app = express();
 
+// Configuration de CORS
 const corsOptions = {
-  origin: 'https://front-g2tc.onrender.com', 
+  origin: ['http://localhost:3000', 'http://192.168.88.242:5000', 'https://front-g2tc.onrender.com'],
   methods: 'GET,POST,PUT,DELETE',
   allowedHeaders: 'Content-Type',
 };
@@ -18,20 +19,11 @@ app.use(express.json());
 
 app.get('/', (req, res) => {
     res.send('Bienvenue sur l\'API');
-});
+}); 
 
 app.use('/personnes', personneRoutes);
 app.use('/patrimoines', patrimoineRoutes);
 app.use('/possessions', possessionRoutes);
-
-app.use((req, res, next) => {
-  res.status(404).json({ message: 'Route non trouvée' });
-});
-
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ message: 'Erreur interne du serveur' });
-});
 
 const PORT = process.env.PORT || 5000;
 
